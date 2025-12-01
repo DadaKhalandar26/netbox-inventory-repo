@@ -2,18 +2,23 @@
 plugin: netbox.netbox.nb_inventory
 
 # REQUIRED
-api_endpoint: "http://192.168.0.200:8000/"
+api_endpoint: http://192.168.0.200:8000/
 
 # supply token from ENV (AWX will inject NETBOX_TOKEN in Credentials)
-token: "707ac1524c470cc8fe9f864987ca430377bfe1d7"
+token: 707ac1524c470cc8fe9f864987ca430377bfe1d7
 
 # if your NetBox uses self-signed certs set false, set true otherwise
 validate_certs: false
+config_context: true
+interfaces: true
+group_names_raw: true
 
 group_by:
-  - site
+  - sites
   - device_roles
   - platform
-
-compose:
-  ansible_host: ip_address
+  - device-types
+  - tenents
+query_filters[]
+devcie_query_filters:
+ - has_primary_ip: true
