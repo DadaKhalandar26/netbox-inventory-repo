@@ -1,0 +1,21 @@
+---
+plugin: community.general.netbox
+api_endpoint: "http://192.168.0.200:8000/api/"
+token: "{{ lookup('env', '707ac1524c470cc8fe9f864987ca430377bfe1d7') }}"
+validate_certs: false
+
+# Optional filters
+# host_filters: "status=active"
+
+# Create useful groups automatically
+group_by:
+  - site
+  - device_role
+  - platform
+
+# Populate host variables
+compose:
+  ansible_host: primary_ip.address
+  device_role: device_role.name
+  site: site.slug
+  platform: platform.slug
