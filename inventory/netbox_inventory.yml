@@ -1,21 +1,19 @@
 ---
-plugin: netbox.netbox.nb_inventory
-api_url: "http://192.168.0.200:8000/api/"      # use your NetBox API base URL (no trailing path)
-token: "{{ lookup('env','707ac1524c470cc8fe9f864987ca430377bfe1d7') }}"  # recommended: set NETBOX_TOKEN as env var in AWX credential
-validate_certs: false                      # set true if your NetBox certs are valid
-use_ssl: false
+plugin: ansible_collections.netbox.netbox.plugins.inventory.nb_inventory
 
-# only include what you want; valid group_by examples:
+# REQUIRED
+api_endpoint: "http://192.168.0.200:8000/api/"
+
+# supply token from ENV (AWX will inject NETBOX_TOKEN in Credentials)
+token: "{{ lookup('env','707ac1524c470cc8fe9f864987ca430377bfe1d7') }}"
+
+# if your NetBox uses self-signed certs set false, set true otherwise
+validate_certs: false
+
 group_by:
-  - site           # valid: 'site' or 'sites'
-  - device_roles   # valid: 'device_roles' (not 'device_role')
-  - platform       # valid: 'platform' or 'platforms'
+  - site
+  - device_roles
+  - platform
 
-# optional filters to limit results (examples)
-# filters:
-#   device_role: ["edge", "access"]
-#   site: ["HQ"]
-
-# show plugin debug info if needed
 compose:
   ansible_host: ip_address
