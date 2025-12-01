@@ -1,5 +1,5 @@
 ---
-plugin: ansible_collections.netbox.netbox.plugins.inventory.nb_inventory
+plugin: netbox.netbox.nb_inventory
 
 # REQUIRED
 api_endpoint: http://192.168.0.200:8000/
