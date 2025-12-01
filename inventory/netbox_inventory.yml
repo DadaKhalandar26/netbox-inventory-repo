@@ -17,8 +17,9 @@ group_by:
   - sites
   - device_roles
   - platform
-  - device-types
-  - tenents
+  - device_types
+  - tenants
+
 query_filters: []
 devcie_query_filters:
  - has_primary_ip: true
