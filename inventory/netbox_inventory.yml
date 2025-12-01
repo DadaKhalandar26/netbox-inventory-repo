@@ -1,6 +1,6 @@
 ---
 plugin: netbox.netbox.nb_inventory
-api_url: "http://192.168.0.200:8000"      # use your NetBox API base URL (no trailing path)
+api_url: "http://192.168.0.200:8000/api/"      # use your NetBox API base URL (no trailing path)
 token: "{{ lookup('env','707ac1524c470cc8fe9f864987ca430377bfe1d7') }}"  # recommended: set NETBOX_TOKEN as env var in AWX credential
 validate_certs: false                      # set true if your NetBox certs are valid
 use_ssl: false
