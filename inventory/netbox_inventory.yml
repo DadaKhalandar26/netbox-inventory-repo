@@ -19,6 +19,6 @@ group_by:
   - platform
   - device-types
   - tenents
-query_filters[]
+query_filters: []
 devcie_query_filters:
  - has_primary_ip: true
