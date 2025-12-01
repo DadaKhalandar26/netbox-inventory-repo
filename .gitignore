@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+
+# Ansible retry files
+*.retry
+
+# OS / editor files
+.DS_Store
+*.swp
+*.swo
