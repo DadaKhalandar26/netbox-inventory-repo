@@ -2,7 +2,7 @@
 plugin: netbox.netbox.nb_inventory
 
 # REQUIRED
-api_endpoint: http://192.168.0.200:8000/
+api_url: http://192.168.0.200:8000/
 
 # supply token from ENV (AWX will inject NETBOX_TOKEN in Credentials)
 token: 707ac1524c470cc8fe9f864987ca430377bfe1d7
