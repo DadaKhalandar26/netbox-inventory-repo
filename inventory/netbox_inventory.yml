@@ -1,11 +1,10 @@
 ---
-plugin: community.general.netbox
+plugin: netbox.netbox.nb_inventory
 api_endpoint: "http://192.168.0.200:8000/api/"
 token: "{{ lookup('env', '707ac1524c470cc8fe9f864987ca430377bfe1d7') }}"
 validate_certs: false
 
-# Optional filters
-# host_filters: "status=active"
+host_filters: "status=active"
 
 # Create useful groups automatically
 group_by:
