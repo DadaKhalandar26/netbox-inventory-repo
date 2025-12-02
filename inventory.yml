@@ -1,11 +1,14 @@
 ---
 plugin: netbox.netbox.nb_inventory
-api_url: http://192.168.0.200:8000/
+api_endpoint: http://192.168.0.200:8000/
 token: 3b90cb2f5146eaae644cfae38838c16ecc82fbbb
 validate_certs: false
 timeout: 30
 group_by:
-  - site
-  - role
+  - sites
+  - device_roles
+  - platforms
+  - device_types
+  - tenants 
 compose:
   ansible_host: primary_ip4
