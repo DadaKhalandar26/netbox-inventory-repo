@@ -6,5 +6,9 @@ validate_certs: false
 timeout: 30
 group_by:
   - sites
+  - device_roles
+  - platforms
+  - device_types
+  - tenants
 compose:
   ansible_host: primary_ip4
